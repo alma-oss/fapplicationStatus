@@ -6,14 +6,22 @@ open Lmc.ApplicationStatus
 
 [<RequireQualifiedAccess>]
 module XML =
+    open System.Xml
     open System.Xml.Serialization
 
-    let private toString (v: byte array) = System.Text.Encoding.ASCII.GetString v
+    let private encoding = System.Text.Encoding.ASCII
+
+    let private toString (v: byte array) = encoding.GetString v
 
     let serialize<'a> (value: 'a) =
         let xmlSerializer = XmlSerializer(typeof<'a>)
         use stream = new MemoryStream()
-        xmlSerializer.Serialize(stream, value)
+
+        use writer = new XmlTextWriter(stream, encoding)
+        writer.Formatting <- Formatting.Indented
+        writer.Indentation <- 2
+
+        xmlSerializer.Serialize(writer, value)
         toString <| stream.ToArray()
 
 [<Tests>]
@@ -33,10 +41,10 @@ let serializationTest =
                 NomadAllocId = "NomadAllocationId"
             }
 
-            let actual = XML.serialize status
+            let actual = XML.serialize<ApplicationStatus> status
 
             let expected =
-                """<?xml version="1.0"?>
+                """<?xml version="1.0" encoding="us-ascii"?>
 <appStatus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <name>lmc-service-common-stable</name>
   <environment>dev1-services</environment>
