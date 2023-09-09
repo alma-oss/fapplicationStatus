@@ -1,10 +1,10 @@
-module Lmc.ApplicationStatus.CreationTest
+module Alma.ApplicationStatus.CreationTest
 
 open Expecto
 open System.Net
-open Lmc.EnvironmentModel
-open Lmc.ServiceIdentification
-open Lmc.ApplicationStatus
+open Alma.EnvironmentModel
+open Alma.ServiceIdentification
+open Alma.ApplicationStatus
 
 let orFail = function
     | Ok success -> success

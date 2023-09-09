@@ -1,8 +1,8 @@
-module Lmc.ApplicationStatus.SerializationTest
+module Alma.ApplicationStatus.SerializationTest
 
 open Expecto
 open System.IO
-open Lmc.ApplicationStatus
+open Alma.ApplicationStatus
 
 [<RequireQualifiedAccess>]
 module XML =

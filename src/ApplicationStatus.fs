@@ -1,7 +1,7 @@
-namespace Lmc.ApplicationStatus
+namespace Alma.ApplicationStatus
 
-open Lmc.ServiceIdentification
-open Lmc.EnvironmentModel
+open Alma.ServiceIdentification
+open Alma.EnvironmentModel
 
 //
 // Common types
