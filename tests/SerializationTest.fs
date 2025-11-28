@@ -37,8 +37,6 @@ let serializationTest =
                 SourceRevision = "GitCommit"
                 Repository = ""
                 HostName = "HostName"
-                NomadJobName = "NomadJobName"
-                NomadAllocId = "NomadAllocationId"
             }
 
             let actual = XML.serialize<ApplicationStatus> status
@@ -54,8 +52,6 @@ let serializationTest =
   <sourceRevision>GitCommit</sourceRevision>
   <repository />
   <hostName>HostName</hostName>
-  <nomadJobName>NomadJobName</nomadJobName>
-  <nomadAllocId>NomadAllocationId</nomadAllocId>
 </appStatus>"""
 
             Expect.equal actual expected "Application status should be serialized to XML"

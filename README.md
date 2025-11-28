@@ -1,22 +1,13 @@
 Application Status
 ==================
 
-> Types for an common Application status representation used in LMC.
+[![NuGet](https://img.shields.io/nuget/v/Alma.ApplicationStatus.svg)](https://www.nuget.org/packages/Alma.ApplicationStatus)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Alma.ApplicationStatus.svg)](https://www.nuget.org/packages/Alma.ApplicationStatus)
+[![Tests](https://github.com/alma-oss/fapplicationStatus/actions/workflows/tests.yaml/badge.svg)](https://github.com/alma-oss/fapplicationStatus/actions/workflows/tests.yaml)
+
+> Types for an common Application status representation.
 
 ## Install
-
-Add following into `paket.dependencies`
-```
-source https://nuget.pkg.github.com/almacareer/index.json username: "%PRIVATE_FEED_USER%" password: "%PRIVATE_FEED_PASS%"
-# LMC Nuget dependencies:
-nuget Alma.ApplicationStatus
-```
-
-NOTE: For local development, you have to create ENV variables with your github personal access token.
-```sh
-export PRIVATE_FEED_USER='{GITHUB USERNANME}'
-export PRIVATE_FEED_PASS='{TOKEN}'	# with permissions: read:packages
-```
 
 Add following into `paket.references`
 ```
@@ -34,8 +25,6 @@ type CurrentApplication = {
     Dependencies: Dependencies
     ServiceStatus: ServiceStatus
     LoggerFactory: ILoggerFactory
-    NomadJobName: NomadJobName
-    NomadAllocationId: NomadAllocationId
     DockerImageVersion: DockerImageVersion
 }
 
@@ -59,10 +48,6 @@ let createStatus (currentApplication: CurrentApplication) =
 
         interface ApplicationStatusFeature.IDockerApplication with
             member __.DockerImageVersion = currentApplication.DockerImageVersion
-
-        interface ApplicationStatusFeature.INomadApplication with
-            member __.NomadJobName = currentApplication.NomadJobName
-            member __.NomadAllocationId = currentApplication.NomadAllocationId
     }
 ```
 

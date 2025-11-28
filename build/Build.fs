@@ -20,12 +20,12 @@ let main args =
     Targets.init {
         Project = {
             Name = "Alma.ApplicationStatus"
-            Summary = "Types for an common Application status representation used in LMC."
+            Summary = "Types for an common Application status representation."
             Git = Git.init ()
         }
         Specs =
             Spec.defaultLibrary
-            |> Spec.mapLibrary (fun library -> { library with NugetApi = NugetApi.Organization "almacareer" })
+            |> Spec.mapLibrary (fun library -> { library with NugetApi = NugetApi.KeyInEnvironment "NUGET_API_KEY" })
     }
 
     args |> Args.run

@@ -13,9 +13,6 @@ type GitRepository = GitRepository of string
 
 type DockerImageVersion = DockerImageVersion of string
 
-type NomadJobName = NomadJobName of string
-type NomadAllocationId = NomadAllocationId of string
-
 [<RequireQualifiedAccess>]
 module GitBranch =
     let value (GitBranch value) = value
@@ -36,16 +33,6 @@ module DockerImageVersion =
     let value (DockerImageVersion value) = value
     let empty = DockerImageVersion ""
 
-[<RequireQualifiedAccess>]
-module NomadJobName =
-    let value (NomadJobName value) = value
-    let empty = NomadJobName ""
-
-[<RequireQualifiedAccess>]
-module NomadAllocationId =
-    let value (NomadAllocationId value) = value
-    let empty = NomadAllocationId ""
-
 //
 // Application Status Interfaces
 //
@@ -64,10 +51,6 @@ module ApplicationStatusFeature =
     type IDockerApplication =
         abstract member DockerImageVersion: DockerImageVersion
 
-    type INomadApplication =
-        abstract member NomadJobName: NomadJobName
-        abstract member NomadAllocationId: NomadAllocationId
-
     module internal Matching =
         let (|IsCurrentApplication|_|): obj -> ICurrentApplication option = box >> function
             | :? ICurrentApplication as currentApplication -> Some currentApplication
@@ -79,10 +62,6 @@ module ApplicationStatusFeature =
 
         let (|IsDockerApplication|_|): obj -> IDockerApplication option = box >> function
             | :? IDockerApplication as dockerAppliation -> Some dockerAppliation
-            | _ -> None
-
-        let (|IsNomadApplication|_|): obj -> INomadApplication option = box >> function
-            | :? INomadApplication as nomadApplication -> Some nomadApplication
             | _ -> None
 
 //
@@ -102,8 +81,6 @@ type ApplicationStatus = {
     [<XmlElement("sourceRevision")>] SourceRevision: string
     [<XmlElement("repository")>] Repository: string
     [<XmlElement("hostName")>] HostName: string
-    [<XmlElement("nomadJobName")>] NomadJobName: string
-    [<XmlElement("nomadAllocId")>] NomadAllocId: string
 }
 
 [<RequireQualifiedAccess>]
@@ -148,13 +125,4 @@ module ApplicationStatus =
                 | _ -> ""
 
             HostName = try Dns.GetHostName() with _ -> ""
-
-            NomadJobName =
-                match application with
-                | IsNomadApplication nomadApplication -> nomadApplication.NomadJobName |> NomadJobName.value
-                | _ -> ""
-            NomadAllocId =
-                match application with
-                | IsNomadApplication nomadApplication -> nomadApplication.NomadAllocationId |> NomadAllocationId.value
-                | _ -> ""
         }
