@@ -37,10 +37,6 @@ let provideApplicationStatus: ApplicationStatusTestCase<_> list =
 
                 interface ApplicationStatusFeature.IDockerApplication with
                     member __.DockerImageVersion = DockerImageVersion "DockerImageVersion"
-
-                interface ApplicationStatusFeature.INomadApplication with
-                    member __.NomadJobName = NomadJobName "NomadJobName"
-                    member __.NomadAllocationId = NomadAllocationId "NomadAllocationId"
             }
             ExpectedStatus = {
                 Name = "lmc-service-common-stable"
@@ -51,8 +47,6 @@ let provideApplicationStatus: ApplicationStatusTestCase<_> list =
                 SourceRevision = "GitCommit"
                 Repository = "GitRepository"
                 HostName = hostName
-                NomadJobName = "NomadJobName"
-                NomadAllocId = "NomadAllocationId"
             }
         }
         {
@@ -79,8 +73,6 @@ let provideApplicationStatus: ApplicationStatusTestCase<_> list =
                 SourceRevision = "GitCommit"
                 Repository = "GitRepository"
                 HostName = hostName
-                NomadJobName = ""
-                NomadAllocId = ""
             }
         }
         {
@@ -99,8 +91,6 @@ let provideApplicationStatus: ApplicationStatusTestCase<_> list =
                 SourceRevision = ""
                 Repository = ""
                 HostName = hostName
-                NomadJobName = ""
-                NomadAllocId = ""
             }
         }
     ]
