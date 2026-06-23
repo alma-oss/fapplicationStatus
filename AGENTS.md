@@ -1,5 +1,7 @@
 # AGENTS.md — Alma.ApplicationStatus
 
+This repo ships Agent Skill for the `Alma.ApplicationStatus` library. Compatible agents discover it automatically; see `.agents/skills/fapplication-status/SKILL.md`.
+
 ## Project Purpose
 
 `Alma.ApplicationStatus` is an F# NuGet library that provides types and interfaces for a common application status representation. It allows services to expose structured status information (instance name, environment, git metadata, Docker image version, hostname) via a standardized `ApplicationStatus` record with XML serialization support.
