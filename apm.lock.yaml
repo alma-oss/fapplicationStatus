@@ -1,0 +1,113 @@
+lockfile_version: '1'
+dependencies: []
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/skills/fapplication-status
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/fapplication-status/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:004e390fe7488c03d2ac6059fd98a5f5a034596ffda17e1e487daf11be962652
+- kind: project-relative
+  target: claude
+  value: .claude/skills/fapplication-status/references/anti-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6fae231c25cd71edba98a541ba4460c52a6d7c810cc42958e2ffb8d75367f18c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/fapplication-status/references/examples.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3087c6b4764912f1e1b4dce5a4dd3aa3467491e2d5f396a8ca4773e49e3be718
+- kind: project-relative
+  target: claude
+  value: .claude/skills/fapplication-status/references/preferred-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:27c08aa8e15f13902e6ff723020bd5e35a252922d6058739f0c48881388cf70a
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/fapplication-status
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/fapplication-status/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:004e390fe7488c03d2ac6059fd98a5f5a034596ffda17e1e487daf11be962652
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/fapplication-status/references/anti-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6fae231c25cd71edba98a541ba4460c52a6d7c810cc42958e2ffb8d75367f18c
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/fapplication-status/references/examples.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3087c6b4764912f1e1b4dce5a4dd3aa3467491e2d5f396a8ca4773e49e3be718
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/fapplication-status/references/preferred-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:27c08aa8e15f13902e6ff723020bd5e35a252922d6058739f0c48881388cf70a
+local_deployed_files:
+- .agents/skills/fapplication-status
+- .agents/skills/fapplication-status/SKILL.md
+- .agents/skills/fapplication-status/references/anti-patterns.md
+- .agents/skills/fapplication-status/references/examples.md
+- .agents/skills/fapplication-status/references/preferred-patterns.md
+- .claude/skills/fapplication-status
+- .claude/skills/fapplication-status/SKILL.md
+- .claude/skills/fapplication-status/references/anti-patterns.md
+- .claude/skills/fapplication-status/references/examples.md
+- .claude/skills/fapplication-status/references/preferred-patterns.md
+local_deployed_file_hashes:
+  .agents/skills/fapplication-status/SKILL.md: sha256:004e390fe7488c03d2ac6059fd98a5f5a034596ffda17e1e487daf11be962652
+  .agents/skills/fapplication-status/references/anti-patterns.md: sha256:6fae231c25cd71edba98a541ba4460c52a6d7c810cc42958e2ffb8d75367f18c
+  .agents/skills/fapplication-status/references/examples.md: sha256:3087c6b4764912f1e1b4dce5a4dd3aa3467491e2d5f396a8ca4773e49e3be718
+  .agents/skills/fapplication-status/references/preferred-patterns.md: sha256:27c08aa8e15f13902e6ff723020bd5e35a252922d6058739f0c48881388cf70a
+  .claude/skills/fapplication-status/SKILL.md: sha256:004e390fe7488c03d2ac6059fd98a5f5a034596ffda17e1e487daf11be962652
+  .claude/skills/fapplication-status/references/anti-patterns.md: sha256:6fae231c25cd71edba98a541ba4460c52a6d7c810cc42958e2ffb8d75367f18c
+  .claude/skills/fapplication-status/references/examples.md: sha256:3087c6b4764912f1e1b4dce5a4dd3aa3467491e2d5f396a8ca4773e49e3be718
+  .claude/skills/fapplication-status/references/preferred-patterns.md: sha256:27c08aa8e15f13902e6ff723020bd5e35a252922d6058739f0c48881388cf70a
