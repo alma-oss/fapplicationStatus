@@ -11,7 +11,7 @@ module XML =
 
     let private encoding = System.Text.Encoding.ASCII
 
-    let private toString (v: byte array) = encoding.GetString v
+    let private toString (v: byte[]) = encoding.GetString v
 
     let serialize<'a> (value: 'a) =
         let xmlSerializer = XmlSerializer(typeof<'a>)
